@@ -15,11 +15,6 @@ app.on("ready", () => {
   tray.on("right-click", () => ctxMenu.popup(mainWindow));
   tray.on("click", function(event) {
     toggleWindow();
-
-    // Show devtools when command clicked
-    if (mainWindow.isVisible() && process.defaultApp && event.metaKey) {
-      mainWindow.openDevTools({ mode: "detach" });
-    }
   });
 
   const ctxMenu = new Menu();
@@ -52,8 +47,8 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 400,
-    height: 600,
+    width: 600,
+    height: 800,
     show: false,
     frame: false,
     fullscreenable: false,
